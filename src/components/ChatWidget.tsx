@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -52,8 +52,27 @@ async function callGuardRailAI(messages: Message[]): Promise<string> {
   }
 }
 
-export function ChatWidget() {
-  const [isOpen, setIsOpen] = useState(false);
+interface ChatWidgetProps {
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+export function ChatWidget({ isOpen: controlledOpen, onOpenChange }: ChatWidgetProps) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  
+  // Sync internal state with controlled prop
+  useEffect(() => {
+    if (controlledOpen !== undefined) {
+      setInternalOpen(controlledOpen);
+    }
+  }, [controlledOpen]);
+  
+  const isOpen = controlledOpen ?? internalOpen;
+  const setIsOpen = (open: boolean) => {
+    setInternalOpen(open);
+    onOpenChange?.(open);
+  };
+  
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isThinking, setIsThinking] = useState(false);
