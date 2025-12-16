@@ -1,4 +1,8 @@
 import { ChatWidget } from '@/components/ChatWidget';
+import { Check } from 'lucide-react';
+import guideFeature from '@/assets/guide-feature.png';
+import analyzeFeature from '@/assets/analyze-feature.png';
+import planFeature from '@/assets/plan-feature.png';
 
 const Index = () => {
   return (
@@ -30,23 +34,98 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Feature 1: Guide */}
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4">How GuardRail Works</h2>
-          <p className="text-muted-foreground text-center mb-12">Three simple steps to transform student AI use into deeper learning</p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '01', title: 'Guide', desc: 'When students try to use AI as a shortcut, GuardRail intercepts and redirects them with thought-provoking questions.' },
-              { step: '02', title: 'Analyze', desc: 'GuardRail analyzes patterns in student AI interactions to identify learning gaps and misconceptions.' },
-              { step: '03', title: 'Plan', desc: 'Get AI-powered lesson suggestions tailored to your students\' specific needs.' },
-            ].map((item) => (
-              <div key={item.step} className="bg-card p-6 rounded-xl border border-border">
-                <div className="text-primary font-bold text-sm mb-2">{item.step}</div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Turning Shortcuts into Teaching Moments
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                AI blocks learning by giving shortcuts to students. GuardRail takes that learning back. 
+                When they attempt to offload thinking, GuardRail provides instant course correction that builds real understanding.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Real-time redirection based on your AI policy',
+                  'Transforms shortcuts into learning opportunities',
+                  'Builds critical thinking through guided reflection',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-xl border border-border">
+              <img src={guideFeature} alt="GuardRail guiding student interaction" className="w-full" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 2: Analyze */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl border border-border">
+              <img src={analyzeFeature} alt="Student analytics dashboard" className="w-full" />
+            </div>
+            <div className="order-1 md:order-2">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Know Where Your Students Are Struggling
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Get detailed insights into individual and classroom-wide learning gaps through AI conversation analysis. 
+                Identify patterns in how students approach problems, understand recurring obstacles, and trace exactly where learning breaks down.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Identify specific topics and concept gaps where students struggle',
+                  'Track student and classroom-wide AI usage patterns',
+                  'Designed with teachers in mind - clear insights without the learning curve',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 3: Plan */}
+      <section className="py-20 px-6 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Faster Planning, Smarter Curriculum
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Lesson plans powered by real student needs, not assumptions. Want to address the exact concepts your students are struggling with? 
+                Transform AI interaction insights into targeted curriculum in minutes.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'AI-assisted planning that enhances your expertise, not replaces it',
+                  'Personalized curriculum planning at classroom scale',
+                  'Streamlined workflows that restore your teaching time',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-xl border border-border">
+              <img src={planFeature} alt="Curriculum planning dashboard" className="w-full" />
+            </div>
           </div>
         </div>
       </section>
