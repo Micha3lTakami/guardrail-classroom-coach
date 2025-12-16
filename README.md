@@ -69,4 +69,7 @@ The Classroom Coach reinforces GuardRail's mission by:
 
 The chatbot serves as both a functional demo and a conceptual preview of how GuardRail can empower educators through intelligent, well-designed AI support.
 
+### Demo Video
+https://drive.google.com/file/d/1d6p5ihcE4459UbRCHSW9zB9xET3jZvsQ/view?usp=sharing
+
 ---
